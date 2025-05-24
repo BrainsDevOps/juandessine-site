@@ -18,7 +18,7 @@ export const useProductsStore = defineStore('products', {
         description: 'Serene mountain landscape at sunset.',
         category: 'Paintings',
         price: 35.00,
-        image: '/placeholder.jpg'
+        image: '/images/placeholder.jpg'
       },
       {
         id: 3,
@@ -26,7 +26,7 @@ export const useProductsStore = defineStore('products', {
         description: 'Black and white sketch of an urban cityscape.',
         category: 'Sketches',
         price: 20.00,
-        image: '/placeholder.jpg'
+        image: '/images/placeholder.jpg'
       },
       {
         id: 4,
@@ -34,7 +34,7 @@ export const useProductsStore = defineStore('products', {
         description: 'Colorful floral pattern with botanical elements.',
         category: 'Digital',
         price: 22.00,
-        image: '/placeholder.jpg'
+        image: '/images/placeholder.jpg'
       },
       {
         id: 5,
@@ -42,7 +42,7 @@ export const useProductsStore = defineStore('products', {
         description: 'Peaceful ocean waves at dawn.',
         category: 'Paintings',
         price: 40.00,
-        image: '/placeholder.jpg'
+        image: '/images/placeholder.jpg'
       },
       {
         id: 6,
@@ -50,7 +50,7 @@ export const useProductsStore = defineStore('products', {
         description: 'Modern composition with geometric shapes.',
         category: 'Digital',
         price: 28.00,
-        image: '/placeholder.jpg'
+        image: '/images/placeholder.jpg'
       },
       {
         id: 7,
@@ -58,7 +58,7 @@ export const useProductsStore = defineStore('products', {
         description: 'Detailed portrait study in pencil.',
         category: 'Sketches',
         price: 30.00,
-        image: '/placeholder.jpg'
+        image: '/images/placeholder.jpg'
       },
       {
         id: 8,
@@ -66,7 +66,7 @@ export const useProductsStore = defineStore('products', {
         description: 'Bold abstract composition with vibrant colors.',
         category: 'Paintings',
         price: 45.00,
-        image: '/placeholder.jpg'
+        image: '/images/placeholder.jpg'
       }
     ],
 
@@ -76,7 +76,7 @@ export const useProductsStore = defineStore('products', {
         type: 'T-Shirt',
         description: 'Premium cotton t-shirt with custom print.',
         basePrice: 25.00,
-        image: '/placeholder.jpg',
+        image: '/images/placeholder.jpg',
         printifyId: 'tshirt-001'
       },
       {
@@ -84,7 +84,7 @@ export const useProductsStore = defineStore('products', {
         type: 'Poster',
         description: 'High-quality art print on premium paper.',
         basePrice: 15.00,
-        image: '/placeholder.jpg',
+        image: '/images/placeholder.jpg',
         printifyId: 'poster-001'
       },
       {
@@ -92,7 +92,7 @@ export const useProductsStore = defineStore('products', {
         type: 'Mug',
         description: 'Ceramic mug with custom artwork.',
         basePrice: 12.00,
-        image: '/placeholder.jpg',
+        image: '/images/placeholder.jpg',
         printifyId: 'mug-001'
       },
       {
@@ -100,7 +100,7 @@ export const useProductsStore = defineStore('products', {
         type: 'Phone Case',
         description: 'Durable phone case with custom print.',
         basePrice: 20.00,
-        image: '/placeholder.jpg',
+        image: '/images/placeholder.jpg',
         printifyId: 'phonecase-001'
       },
       {
@@ -108,7 +108,7 @@ export const useProductsStore = defineStore('products', {
         type: 'Tote Bag',
         description: 'Canvas tote bag with custom artwork.',
         basePrice: 18.00,
-        image: '/placeholder.jpg',
+        image: '/images/placeholder.jpg',
         printifyId: 'totebag-001'
       },
       {
@@ -116,7 +116,7 @@ export const useProductsStore = defineStore('products', {
         type: 'Hoodie',
         description: 'Comfortable hoodie with custom print.',
         basePrice: 40.00,
-        image: '/placeholder.jpg',
+        image: '/images/placeholder.jpg',
         printifyId: 'hoodie-001'
       },
       {
@@ -124,7 +124,7 @@ export const useProductsStore = defineStore('products', {
         type: 'Sticker',
         description: 'Vinyl sticker with custom artwork.',
         basePrice: 3.50,
-        image: '/placeholder.jpg',
+        image: '/images/placeholder.jpg',
         printifyId: 'sticker-001'
       },
       {
@@ -132,7 +132,7 @@ export const useProductsStore = defineStore('products', {
         type: 'Canvas Print',
         description: 'Gallery-quality canvas print.',
         basePrice: 50.00,
-        image: '/placeholder.jpg',
+        image: '/images/placeholder.jpg',
         printifyId: 'canvas-001'
       }
     ],
