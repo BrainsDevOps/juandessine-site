@@ -85,10 +85,12 @@
 import { ref, onMounted, computed, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useProductsStore } from '~/stores/products';
+import { useCartStore } from '~/stores/cart';
 
 const route = useRoute();
 const router = useRouter();
 const productsStore = useProductsStore();
+const cartStore = useCartStore();
 
 const products = ref([]);
 const filteredProducts = ref([]);
@@ -148,8 +150,13 @@ const addToCart = (productId) => {
   const product = productsStore.getProductById(productId);
   if (!product) return;
 
-  // This would normally add the product to the cart in a store
-  alert(`Added ${product.type} with ${selectedArtwork.value.title} to cart!`);
+  // Add the product to the cart using the cart store
+  cartStore.addItem({
+    product: product.type,
+    artwork: selectedArtwork.value.title,
+    price: product.basePrice,
+    quantity: 1
+  });
 
   // Navigate to cart
   router.push('/cart');

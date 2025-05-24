@@ -104,55 +104,32 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 import { useRouter } from 'vue-router';
+import { useCartStore } from '~/stores/cart';
 
 const router = useRouter();
+const cartStore = useCartStore();
 
-// This would normally come from a store
-const cartItems = ref([
-  {
-    product: 'T-Shirt',
-    artwork: 'Artwork 1',
-    price: 25.00,
-    quantity: 1
-  },
-  {
-    product: 'Poster',
-    artwork: 'Artwork 3',
-    price: 15.00,
-    quantity: 2
-  }
-]);
-
-const subtotal = computed(() => {
-  return cartItems.value.reduce((total, item) => total + (item.price * item.quantity), 0);
-});
-
-const shipping = computed(() => {
-  return subtotal.value > 50 ? 0 : 5.99;
-});
-
-const tax = computed(() => {
-  return subtotal.value * 0.08; // 8% tax rate
-});
-
-const total = computed(() => {
-  return subtotal.value + shipping.value + tax.value;
-});
+// Get cart items from the store
+const cartItems = computed(() => cartStore.cartItems);
+const subtotal = computed(() => cartStore.subtotal);
+const shipping = computed(() => cartStore.shipping);
+const tax = computed(() => cartStore.tax);
+const total = computed(() => cartStore.total);
 
 const increaseQuantity = (index) => {
-  cartItems.value[index].quantity++;
+  cartStore.updateItemQuantity(index, cartItems.value[index].quantity + 1);
 };
 
 const decreaseQuantity = (index) => {
   if (cartItems.value[index].quantity > 1) {
-    cartItems.value[index].quantity--;
+    cartStore.updateItemQuantity(index, cartItems.value[index].quantity - 1);
   }
 };
 
 const removeItem = (index) => {
-  cartItems.value.splice(index, 1);
+  cartStore.removeItem(index);
 };
 
 const proceedToCheckout = () => {

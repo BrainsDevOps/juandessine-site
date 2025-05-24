@@ -215,34 +215,22 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
+import { useCartStore } from '~/stores/cart';
 
 const router = useRouter();
+const cartStore = useCartStore();
 
-// This would normally come from a store
-const cartItems = ref([
-  {
-    product: 'T-Shirt',
-    artwork: 'Artwork 1',
-    price: 25.00,
-    quantity: 1
-  },
-  {
-    product: 'Poster',
-    artwork: 'Artwork 3',
-    price: 15.00,
-    quantity: 2
-  }
-]);
+// Get cart items from the store
+const cartItems = computed(() => cartStore.cartItems);
+const subtotal = computed(() => cartStore.subtotal);
+const shipping = computed(() => cartStore.shipping);
+const tax = computed(() => cartStore.tax);
+const total = computed(() => cartStore.total);
 
-const shippingInfo = ref({
-  firstName: '',
-  lastName: '',
-  email: '',
-  address: '',
-  city: '',
-  state: '',
-  zipCode: '',
-  country: ''
+// Use the shipping info from the cart store
+const shippingInfo = computed({
+  get: () => cartStore.shippingInfo,
+  set: (value) => cartStore.setShippingInfo(value)
 });
 
 const paymentInfo = ref({
@@ -251,22 +239,6 @@ const paymentInfo = ref({
 });
 
 const sameAsShipping = ref(true);
-
-const subtotal = computed(() => {
-  return cartItems.value.reduce((total, item) => total + (item.price * item.quantity), 0);
-});
-
-const shipping = computed(() => {
-  return subtotal.value > 50 ? 0 : 5.99;
-});
-
-const tax = computed(() => {
-  return subtotal.value * 0.08; // 8% tax rate
-});
-
-const total = computed(() => {
-  return subtotal.value + shipping.value + tax.value;
-});
 
 const formIsValid = computed(() => {
   // Basic validation
@@ -285,6 +257,10 @@ const placeOrder = async () => {
 
     // For demo purposes, we'll just show an alert and redirect
     alert('Order placed successfully! Thank you for your purchase.');
+
+    // Clear the cart after successful order
+    cartStore.clearCart();
+
     router.push('/');
   } catch (error) {
     console.error('Error placing order:', error);
