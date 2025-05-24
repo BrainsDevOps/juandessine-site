@@ -1,9 +1,10 @@
 <template>
   <div>
-    <section class="py-12">
-      <div class="container mx-auto px-4">
-        <h1 class="text-4xl font-bold text-center mb-8">Welcome to Juan Dessine Art Shop</h1>
-        <p class="text-xl text-center text-gray-600 mb-12">Discover unique artwork and custom printed products</p>
+    <section class="py-24 bg-cover bg-center relative" style="background-image: url('/images/banner.jpg');">
+      <div class="absolute inset-0 bg-black opacity-40"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <h1 class="text-4xl font-bold text-center mb-8 text-white">Welcome to Juan Dessine Art Shop</h1>
+        <p class="text-xl text-center text-white mb-12">Discover unique artwork and custom printed products</p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="bg-gray-100 p-8 rounded-lg">
