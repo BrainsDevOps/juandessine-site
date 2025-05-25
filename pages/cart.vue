@@ -59,7 +59,7 @@
 
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
           <div class="mb-4 md:mb-0">
-            <NuxtLink to="/products" class="text-blue-600 hover:text-blue-800">
+            <NuxtLink :to="localePath('/products')" class="text-blue-600 hover:text-blue-800">
               ← Continue Shopping
             </NuxtLink>
           </div>
@@ -95,7 +95,7 @@
 
       <div v-else class="bg-gray-100 p-8 rounded-lg text-center">
         <p class="text-xl mb-4">Your cart is empty</p>
-        <NuxtLink to="/gallery" class="text-blue-600 hover:text-blue-800">
+        <NuxtLink :to="localePath('/gallery')" class="text-blue-600 hover:text-blue-800">
           Browse our gallery to add items
         </NuxtLink>
       </div>
@@ -110,6 +110,7 @@ import { useCartStore } from '~/stores/cart';
 
 const router = useRouter();
 const cartStore = useCartStore();
+const localePath = useLocalePath()
 
 // Get cart items from the store
 const cartItems = computed(() => cartStore.cartItems);

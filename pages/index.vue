@@ -10,7 +10,7 @@
           <div class="bg-gray-100 p-8 rounded-lg">
             <h2 class="text-2xl font-bold mb-4">Browse Artwork</h2>
             <p class="mb-6">Explore our collection of original artwork by Juan Dessine.</p>
-            <NuxtLink to="/gallery" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
+            <NuxtLink :to="localePath('/gallery')" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
               View Gallery
             </NuxtLink>
           </div>
@@ -18,7 +18,7 @@
           <div class="bg-gray-100 p-8 rounded-lg">
             <h2 class="text-2xl font-bold mb-4">Custom Products</h2>
             <p class="mb-6">Get your favorite artwork printed on various products.</p>
-            <NuxtLink to="/products" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
+            <NuxtLink :to="localePath('/products')" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
               Shop Products
             </NuxtLink>
           </div>
@@ -66,3 +66,6 @@
     </section>
   </div>
 </template>
+<script setup>
+const localePath = useLocalePath()
+</script>

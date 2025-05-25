@@ -2,7 +2,7 @@
   <div>
     <section class="py-12">
       <div class="container mx-auto px-4">
-        <h1 class="text-4xl font-bold text-center mb-8">About Juan Dessine</h1>
+        <h1 class="text-4xl font-bold text-center mb-8">{{ $t('aboutHeader') }} - Juan Dessine</h1>
         <div class="max-w-3xl mx-auto">
           <div class="mb-12">
             <img src="/images/placeholder.jpg" alt="Juan Dessine" class="w-64 h-64 object-cover rounded-full mx-auto mb-8">
@@ -81,7 +81,7 @@
           <a href="#" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
             Contact Me
           </a>
-          <NuxtLink to="/gallery" class="inline-block bg-gray-200 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-300">
+          <NuxtLink :to="localePath('/gallery')" class="inline-block bg-gray-200 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-300">
             View Gallery
           </NuxtLink>
         </div>
@@ -89,3 +89,7 @@
     </section>
   </div>
 </template>
+
+<script setup>
+const localePath = useLocalePath()
+</script>

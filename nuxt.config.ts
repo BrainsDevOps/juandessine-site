@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   modules: [
+    '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     'nuxt-icon'
@@ -19,7 +20,6 @@ export default defineNuxtConfig({
       stripeSecretKey: process.env.STRIPE_SECRET_KEY || ''
     }
   },
-
   app: {
     head: {
       title: 'Juan Dessine Art Shop',
@@ -30,5 +30,21 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ]
     }
+  },
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        file: 'en.json',
+      },
+      {
+        code: 'es',
+        name: 'Español',
+        file: 'es.json',
+      },
+    ],
+    defaultLocale: 'en',
+    strategy: 'prefix'
   }
 })
